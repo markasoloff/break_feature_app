@@ -1,0 +1,22 @@
+<h1>Index Breaks</h1>
+ 
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Duration</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+    <% @breaks.each do |break| %>
+      <tr>
+        <td><%= break.status %></td>
+        <td><%= break.duration %></td>
+        <td><%= link_to "Show", break %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+ 

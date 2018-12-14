@@ -2,9 +2,8 @@ class BreaksController < ApplicationController
 
 
   def index
-    response = HTTP.get("http://localhost:3000/breaks")
-    # @breaks = response.parse
-    render 'index.html.erb'
+    @breaks = Break.all
+    render "index.html.erb"
   end
 
   def show
