@@ -13,21 +13,17 @@ class BreaksController < ApplicationController
   end
 
 
-  # def update
-  #   client_params = {
-  #                     title: params[:title],
-  #                     prep_time: params[:prep_time],
-  #                     ingredients: params[:ingredients],
-  #                     directions: params[:directions],
-  #                     image_url: params[:image_url]
-  #                     }
+  def update
+    client_params = {
+                      status: params[:status],
+                      duration: params[:duration]
+                      }
 
-
-  #   response = HTTP.patch("http://localhost:3000/api/recipes/#{params[:id]}",
-  #               form: client_params
-  #                       )
-  #   @recipe = response.parse
-  #   redirect_to "/client/recipes/#{ @recipe["id"]}"
-  # end
+    response = HTTP.patch("http://localhost:3000/breaks/#{params[:id]}",
+                form: client_params
+                        )
+    @break = response.parse
+    redirect_to "/breaks/#{@break["id"]}"
+  end
 
 end

@@ -11,3 +11,11 @@
  
 </table>
  
+
+<button class="switch switch-primary">
+     <%= check_box_tag('item_list[]',
+             value = Break.ids,
+             checked = false,
+             { disabled: false,
+               onclick: "alert('Message that Break has begun')" }) %>
+</button>
